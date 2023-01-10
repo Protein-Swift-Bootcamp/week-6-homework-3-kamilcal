@@ -405,7 +405,6 @@
                     <navigationItem key="navigationItem" title="Countries" id="7rr-S3-eKo"/>
                     <connections>
                         <outlet property="tableView" destination="Ta4-3q-Wpc" id="7AN-Me-g1L"/>
-                        <outlet property="titleLabel" destination="glZ-vW-XiN" id="3v7-4b-2Q9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9b-UT-PFo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

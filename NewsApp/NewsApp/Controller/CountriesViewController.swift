@@ -9,7 +9,8 @@ import UIKit
 
 class CountriesViewController: UIViewController {
 
-    @IBOutlet var titleLabel: UILabel!
+
+
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
