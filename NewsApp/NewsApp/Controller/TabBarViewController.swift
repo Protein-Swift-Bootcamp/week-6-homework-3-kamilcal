@@ -1,16 +1,14 @@
 //
-//  HeadlinesViewController.swift
+//  TabBarViewController.swift
 //  NewsApp
 //
-//  Created by kamilcal on 10.01.2023.
+//  Created by kamilcal on 11.01.2023.
 //
 
 import UIKit
 
-class HeadlinesViewController: UIViewController {
-    
-    @IBOutlet var collectionView: UICollectionView!
-    
+class TabBarViewController: UITabBarController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -21,6 +21,8 @@
 		D2765903296E243B00CF8874 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2765902296E243B00CF8874 /* Article.swift */; };
 		D2765905296E24C500CF8874 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2765904296E24C500CF8874 /* Source.swift */; };
 		D2765907296E259000CF8874 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2765906296E259000CF8874 /* ErrorResponse.swift */; };
+		D276590A296EF09B00CF8874 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2765909296EF09B00CF8874 /* DataController.swift */; };
+		D276590C296EF63500CF8874 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276590B296EF63500CF8874 /* TabBarViewController.swift */; };
 		D2EFF6BE296DAAAD009774B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EFF6BD296DAAAD009774B2 /* AppDelegate.swift */; };
 		D2EFF6C0296DAAAD009774B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EFF6BF296DAAAD009774B2 /* SceneDelegate.swift */; };
 		D2EFF6C5296DAAAD009774B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EFF6C3296DAAAD009774B2 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		D2765902296E243B00CF8874 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		D2765904296E24C500CF8874 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		D2765906296E259000CF8874 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		D2765909296EF09B00CF8874 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		D276590B296EF63500CF8874 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D2EFF6BA296DAAAD009774B2 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EFF6BD296DAAAD009774B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2EFF6BF296DAAAD009774B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		D2765908296EF07A00CF8874 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D2EFF6C6296DAAAD009774B2 /* NewsApp.xcdatamodeld */,
+				D2765909296EF09B00CF8874 /* DataController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		D2EFF6B1296DAAAD009774B2 = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +112,6 @@
 				D2EFF6D4296DBCB0009774B2 /* Model */,
 				D2EFF6D6296DBCBB009774B2 /* Controller */,
 				D2EFF6D5296DBCB5009774B2 /* View */,
-				D2EFF6C6296DAAAD009774B2 /* NewsApp.xcdatamodeld */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -107,6 +119,7 @@
 		D2EFF6D4296DBCB0009774B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D2765908296EF07A00CF8874 /* CoreData */,
 				D2EFF6D9296DBCEA009774B2 /* Responses */,
 				D2EFF6D8296DBCE1009774B2 /* API */,
 				D2EFF6D7296DBCDA009774B2 /* Data */,
@@ -129,6 +142,7 @@
 			children = (
 				D27658F5296DCF2900CF8874 /* Cells */,
 				D27658F1296DC88A00CF8874 /* CountrySelectionViewController.swift */,
+				D276590B296EF63500CF8874 /* TabBarViewController.swift */,
 				D27658F3296DC89F00CF8874 /* HeadlinesViewController.swift */,
 				D27658EB296DC85800CF8874 /* CategoriesViewController.swift */,
 				D27658ED296DC86D00CF8874 /* SearchViewController.swift */,
@@ -265,6 +279,8 @@
 				D27658FD296E12A900CF8874 /* Countrites.swift in Sources */,
 				D2EFF6C8296DAAAD009774B2 /* NewsApp.xcdatamodeld in Sources */,
 				D27658F7296DCF6900CF8874 /* HeadlinesCollectionViewCell.swift in Sources */,
+				D276590C296EF63500CF8874 /* TabBarViewController.swift in Sources */,
+				D276590A296EF09B00CF8874 /* DataController.swift in Sources */,
 				D2EFF6C0296DAAAD009774B2 /* SceneDelegate.swift in Sources */,
 				D27658EC296DC85800CF8874 /* CategoriesViewController.swift in Sources */,
 				D27658FF296E142500CF8874 /* NewsAPI.swift in Sources */,
