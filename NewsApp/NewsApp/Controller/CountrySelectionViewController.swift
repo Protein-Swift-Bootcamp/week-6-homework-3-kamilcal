@@ -29,6 +29,11 @@ class CountrySelectionViewController: UIViewController {
        
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        try? dataController.viewContext.save()
+    }
+    
     
     @IBAction func doneButton(_ sender: UIButton) {
         
