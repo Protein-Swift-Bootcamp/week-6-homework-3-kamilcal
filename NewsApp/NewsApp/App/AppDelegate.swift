@@ -25,10 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let result = try? DataController.shared.viewContext.fetch(fetchRequest) {
             if result.count > 0 {
-                let initialVC = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+                let initialVC = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarViewController
                 self.window?.rootViewController = initialVC
             } else {
-                let initialVC = storyboard.instantiateViewController(withIdentifier: "CountrySelectionViewController") as! CountrySelectionViewController
+                let initialVC = storyboard.instantiateViewController(withIdentifier: "CountrySelectionController") as! CountrySelectionViewController
                 self.window?.rootViewController = initialVC
             }
         }

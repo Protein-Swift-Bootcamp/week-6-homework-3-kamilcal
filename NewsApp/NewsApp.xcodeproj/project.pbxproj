@@ -23,8 +23,8 @@
 		D2765907296E259000CF8874 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2765906296E259000CF8874 /* ErrorResponse.swift */; };
 		D276590A296EF09B00CF8874 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2765909296EF09B00CF8874 /* DataController.swift */; };
 		D276590C296EF63500CF8874 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276590B296EF63500CF8874 /* TabBarViewController.swift */; };
+		D276590E296F2F3C00CF8874 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276590D296F2F3C00CF8874 /* SceneDelegate.swift */; };
 		D2EFF6BE296DAAAD009774B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EFF6BD296DAAAD009774B2 /* AppDelegate.swift */; };
-		D2EFF6C0296DAAAD009774B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EFF6BF296DAAAD009774B2 /* SceneDelegate.swift */; };
 		D2EFF6C5296DAAAD009774B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EFF6C3296DAAAD009774B2 /* Main.storyboard */; };
 		D2EFF6C8296DAAAD009774B2 /* NewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2EFF6C6296DAAAD009774B2 /* NewsApp.xcdatamodeld */; };
 		D2EFF6CA296DAAAE009774B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2EFF6C9296DAAAE009774B2 /* Assets.xcassets */; };
@@ -48,9 +48,9 @@
 		D2765906296E259000CF8874 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		D2765909296EF09B00CF8874 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D276590B296EF63500CF8874 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D276590D296F2F3C00CF8874 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D2EFF6BA296DAAAD009774B2 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EFF6BD296DAAAD009774B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2EFF6BF296DAAAD009774B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D2EFF6C4296DAAAD009774B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2EFF6C7296DAAAD009774B2 /* NewsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsApp.xcdatamodel; sourceTree = "<group>"; };
 		D2EFF6C9296DAAAE009774B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,8 +181,8 @@
 		D2EFF6DA296DBD02009774B2 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				D276590D296F2F3C00CF8874 /* SceneDelegate.swift */,
 				D2EFF6BD296DAAAD009774B2 /* AppDelegate.swift */,
-				D2EFF6BF296DAAAD009774B2 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -281,8 +281,8 @@
 				D27658F7296DCF6900CF8874 /* HeadlinesCollectionViewCell.swift in Sources */,
 				D276590C296EF63500CF8874 /* TabBarViewController.swift in Sources */,
 				D276590A296EF09B00CF8874 /* DataController.swift in Sources */,
-				D2EFF6C0296DAAAD009774B2 /* SceneDelegate.swift in Sources */,
 				D27658EC296DC85800CF8874 /* CategoriesViewController.swift in Sources */,
+				D276590E296F2F3C00CF8874 /* SceneDelegate.swift in Sources */,
 				D27658FF296E142500CF8874 /* NewsAPI.swift in Sources */,
 				D2765903296E243B00CF8874 /* Article.swift in Sources */,
 			);
