@@ -25,6 +25,7 @@
 		D276590C296EF63500CF8874 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276590B296EF63500CF8874 /* TabBarViewController.swift */; };
 		D276590E296F2F3C00CF8874 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276590D296F2F3C00CF8874 /* SceneDelegate.swift */; };
 		D2765910296F6B8400CF8874 /* ViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276590F296F6B8400CF8874 /* ViewController + Extension.swift */; };
+		D2765914296F8C0200CF8874 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2765913296F8C0200CF8874 /* UIImageView + Extension.swift */; };
 		D2EFF6BE296DAAAD009774B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EFF6BD296DAAAD009774B2 /* AppDelegate.swift */; };
 		D2EFF6C5296DAAAD009774B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EFF6C3296DAAAD009774B2 /* Main.storyboard */; };
 		D2EFF6C8296DAAAD009774B2 /* NewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2EFF6C6296DAAAD009774B2 /* NewsApp.xcdatamodeld */; };
@@ -51,6 +52,7 @@
 		D276590B296EF63500CF8874 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D276590D296F2F3C00CF8874 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D276590F296F6B8400CF8874 /* ViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Extension.swift"; sourceTree = "<group>"; };
+		D2765913296F8C0200CF8874 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		D2EFF6BA296DAAAD009774B2 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EFF6BD296DAAAD009774B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2EFF6C4296DAAAD009774B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				D276590F296F6B8400CF8874 /* ViewController + Extension.swift */,
+				D2765913296F8C0200CF8874 /* UIImageView + Extension.swift */,
 				D2EFF6DA296DBD02009774B2 /* App */,
 				D2EFF6DB296DBD0A009774B2 /* Supporting Files */,
 				D2EFF6D4296DBCB0009774B2 /* Model */,
@@ -278,6 +281,7 @@
 				D27658F9296DD84B00CF8874 /* CategoriesCollectionViewCell.swift in Sources */,
 				D27658F4296DC89F00CF8874 /* HeadlinesViewController.swift in Sources */,
 				D2765907296E259000CF8874 /* ErrorResponse.swift in Sources */,
+				D2765914296F8C0200CF8874 /* UIImageView + Extension.swift in Sources */,
 				D2765901296E23E900CF8874 /* NewsResponse.swift in Sources */,
 				D2765905296E24C500CF8874 /* Source.swift in Sources */,
 				D27658FD296E12A900CF8874 /* Countrites.swift in Sources */,

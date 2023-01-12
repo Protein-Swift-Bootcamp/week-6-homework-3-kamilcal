@@ -75,11 +75,15 @@ extension HeadlinesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HeadlinesCollectionViewCell
-        
-        
-        cell.infoLabel.text = articles[indexPath.row].title
-        return cell
+        if let articleImageString = articles[indexPath.row].urlToImage {
+            
+            let imageURL = URL(string: articleImageString)
+            cell.imageView.downloaded(from: imageURL!)
+//            TODO: imageview force unu kaldır!
+        }
+            cell.infoLabel.text = articles[indexPath.row].title
+            return cell
+        }
     }
-    
-    
-}
+
+
