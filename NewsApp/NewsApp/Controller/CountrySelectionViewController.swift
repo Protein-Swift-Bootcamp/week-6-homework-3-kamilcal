@@ -42,6 +42,7 @@ class CountrySelectionViewController: UIViewController {
             country.country = currentCountry
             countries.append(country.country!)
         }
+        
         guard selectedCountries.count == 0 else {
             performSegue(withIdentifier: "GetStarted", sender: self)
 //            TODO: present e çevir, alert ekle.

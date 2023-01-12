@@ -264,7 +264,7 @@
         <scene sceneID="QXq-lW-8QT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zhV-g2-cbk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Headline" id="Kuf-f6-ooj"/>
+                    <tabBarItem key="tabBarItem" title="Headline" image="HeadlinesIcon" id="Kuf-f6-ooj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tLU-gk-QkS">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -283,7 +283,7 @@
         <scene sceneID="jxp-2w-Crc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oAR-gC-A14" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Global" id="ndx-zc-d4A"/>
+                    <tabBarItem key="tabBarItem" title="Global" image="Globe" id="ndx-zc-d4A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8gP-vg-bqt">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -375,17 +375,17 @@
                                 <rect key="frame" x="0.0" y="147" width="393" height="622"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="10" reuseIdentifier="CountryCell" textLabel="glZ-vW-XiN" style="IBUITableViewCellStyleDefault" id="0rl-eZ-2EW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="CountryCell" textLabel="Fja-V4-fgQ" style="IBUITableViewCellStyleDefault" id="0rl-eZ-2EW">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0rl-eZ-2EW" id="Tzo-4S-kLh">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="glZ-vW-XiN">
-                                                    <rect key="frame" x="30" y="0.0" width="343" height="43.666667938232422"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fja-V4-fgQ">
+                                                    <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -409,7 +409,18 @@
                             <constraint firstItem="MCE-3u-iWy" firstAttribute="bottom" secondItem="Ta4-3q-Wpc" secondAttribute="bottom" id="hmu-L2-f2u"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Countries" id="7rr-S3-eKo"/>
+                    <navigationItem key="navigationItem" title="Countries" id="7rr-S3-eKo">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="vgY-KX-nTU">
+                            <connections>
+                                <action selector="editButton:" destination="G2E-P5-W4L" id="qam-9k-DIi"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gys-id-hfY">
+                            <connections>
+                                <action selector="addButton:" destination="G2E-P5-W4L" id="3QA-z9-Usc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Ta4-3q-Wpc" id="7AN-Me-g1L"/>
                     </connections>
@@ -418,11 +429,11 @@
             </objects>
             <point key="canvasLocation" x="2323" y="1504"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="ZFf-Cv-Zf1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hHn-7F-7Ap" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="TUf-cN-40U"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="NewsSearchIcon" id="TUf-cN-40U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W72-HK-GQk">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -437,11 +448,11 @@
             </objects>
             <point key="canvasLocation" x="1091" y="749"/>
         </scene>
-        <!--Item-->
+        <!--Countries-->
         <scene sceneID="AaF-Yb-SXg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vdU-nU-1fj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7Vv-WN-xzK"/>
+                    <tabBarItem key="tabBarItem" title="Countries" image="CountriesIcon" id="7Vv-WN-xzK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="32J-im-NU6">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -461,6 +472,10 @@
         <segue reference="STv-gE-QjM"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="CountriesIcon" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="Globe" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="HeadlinesIcon" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="NewsSearchIcon" width="33.333332061767578" height="33.333332061767578"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
