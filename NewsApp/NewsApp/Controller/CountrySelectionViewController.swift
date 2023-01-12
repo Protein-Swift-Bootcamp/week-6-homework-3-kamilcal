@@ -21,6 +21,7 @@ class CountrySelectionViewController: UIViewController {
     var selectedCountries = [String]()
     var loadedCountries = [Country]()
     
+    
     var isEditingCountries = false
     
     override func viewDidLoad() {

@@ -9,7 +9,7 @@ import UIKit
 
 class NewsAPI {
     
-    static let apiKey = "ff93b27b0da64b0a80c7247c6940c32e"
+    static let apiKey = "783293128b914179b4826ea2803ebcd1"
     
     struct NewsInfo{
         static var countryName = ""
@@ -65,7 +65,7 @@ class NewsAPI {
                        url: Endpoints.searchForNews(keyword).url,
                        responseType: NewsResponse.self) { response, errorMessage, statusCode, error in
             if let response = response {
-                NewsInfo.totalPages = response.totalResults / 20
+                NewsInfo.totalPages = response.totalResults / 30
                 completionHandler(response.articles,"",statusCode,nil)
             } else {
                 completionHandler([],errorMessage,statusCode,error)

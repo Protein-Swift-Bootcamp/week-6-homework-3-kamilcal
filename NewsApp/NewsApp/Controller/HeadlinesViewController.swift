@@ -20,38 +20,83 @@ class HeadlinesViewController: UIViewController {
     var countriesNames = [String]()
     var loadedCountries = [Country]()
     
+    var refreshControl = UIRefreshControl()
+    
     var category = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        setupNewsHeadlines()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchDataFromStorage()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        category = ""
+    }
+    
+    func setupUI(){
         collectionView.dataSource = self
         collectionView.delegate = self
         
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
-    
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        fetchDataFromStorage()
-        print("\(articles)")
+    @objc func refreshNews() {
+        navigationItem.rightBarButtonItem!.isEnabled = false
+        articles.removeAll()
+        countriesNames.removeAll()
+        collectionView.reloadData()
+        requestHeadlinesForCountries(countries: loadedCountries)
     }
+    
     
     //MARK: - response
     func handleHeadlineNewsResponse(articles: [Article] ,countryName: String,statusCode: Int, error: Error?) {
         if error != nil || statusCode != 200 {
             handleErrors(statusCode: statusCode,message: countryName ,error: error)
+            navigationItem.rightBarButtonItem!.isEnabled = true
             return
         }
+        
+        navigationItem.rightBarButtonItem!.isEnabled = true
+       
         for article in articles {
             if article.urlToImage != nil {
                 self.articles.append(article)
                 self.countriesNames.append(countryName)
             }
         }
+        if refreshControl.isRefreshing {
+            refreshControl.endRefreshing()
+        }
         collectionView.reloadData()
+      
+    }
+    
+    func setupNewsHeadlines() {
+        self.refreshControl.addTarget(self, action: #selector(refreshNews), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
+        
+        fetchDataFromStorage()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "refreshIcon"), style: .plain, target: self, action: #selector(refreshNews))
+        navigationItem.rightBarButtonItem!.isEnabled = false
+        
+        if category.isEmpty {
+            navigationItem.title = "Headlines"
+            requestHeadlinesForCountries(countries: loadedCountries)
+        } else {
+            navigationItem.title = category
+            requestHeadlinesForCountries(countries: loadedCountries)
+        }
     }
     //MARK: - request
     func requestHeadlinesForCountries(countries: [Country]){
@@ -76,7 +121,6 @@ class HeadlinesViewController: UIViewController {
 
 extension HeadlinesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("\(articles.count)")
         return articles.count
     }
     
@@ -87,26 +131,22 @@ extension HeadlinesViewController: UICollectionViewDataSource {
             let forceURL = URL(string: "https://r.resimlink.com/ux_FOw48J.jpg")
             let imageURL = URL(string: articleImageString)
             cell.imageView.downloaded(from: imageURL ?? forceURL!)
-//            TODO: imageview force unu kaldır!
         }
-        cell.infoLabel.text = articles[indexPath.item]?.description
-            return cell
-        }
+        cell.infoLabel.text = articles[indexPath.item]?.title
+        return cell
     }
+}
 
 
 extension HeadlinesViewController : PinterestLayoutDelegate
 {
     func collectionView(collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
     {
-//        if let post = articles[indexPath.item], let photo = post.urlToImage {
-            let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-            let rect = AVMakeRect(aspectRatio: .init(width: 177, height: 120), insideRect: boundingRect)
-            
-            return rect.size.height
-//        }
+        let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+        let rect = AVMakeRect(aspectRatio: .init(width: 177, height: 177), insideRect: boundingRect)
+        
+        return rect.size.height
 
-//        return 0
     }
     
     func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
@@ -114,7 +154,7 @@ extension HeadlinesViewController : PinterestLayoutDelegate
         if let post = articles[indexPath.item] {
             let topPadding = CGFloat(8)
             let captionFont = UIFont.systemFont(ofSize: 15)
-            let captionHeight = self.height(for: post.description!, with: captionFont, width: width)
+            let captionHeight = self.height(for: post.title, with: captionFont, width: width)
             let height = topPadding + captionHeight + topPadding
             
             return height
