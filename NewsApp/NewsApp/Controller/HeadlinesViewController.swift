@@ -84,11 +84,12 @@ extension HeadlinesViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HeadlinesCollectionViewCell
         if let articleImageString = articles[indexPath.row]?.urlToImage {
             
+            let forceURL = URL(string: "https://r.resimlink.com/ux_FOw48J.jpg")
             let imageURL = URL(string: articleImageString)
-            cell.imageView.downloaded(from: imageURL!)
+            cell.imageView.downloaded(from: imageURL ?? forceURL!)
 //            TODO: imageview force unu kaldır!
         }
-        cell.infoLabel.text = articles[indexPath.item]?.title
+        cell.infoLabel.text = articles[indexPath.item]?.description
             return cell
         }
     }
@@ -100,7 +101,7 @@ extension HeadlinesViewController : PinterestLayoutDelegate
     {
 //        if let post = articles[indexPath.item], let photo = post.urlToImage {
             let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-            let rect = AVMakeRect(aspectRatio: .init(width: 177, height: 177), insideRect: boundingRect)
+            let rect = AVMakeRect(aspectRatio: .init(width: 177, height: 120), insideRect: boundingRect)
             
             return rect.size.height
 //        }
@@ -112,11 +113,9 @@ extension HeadlinesViewController : PinterestLayoutDelegate
     {
         if let post = articles[indexPath.item] {
             let topPadding = CGFloat(8)
-            let bottomPadding = CGFloat(12)
             let captionFont = UIFont.systemFont(ofSize: 15)
-            let captionHeight = self.height(for: post.title, with: captionFont, width: width)
-            let profileImageHeight = CGFloat(36)
-            let height = topPadding + captionHeight + topPadding + profileImageHeight + bottomPadding
+            let captionHeight = self.height(for: post.description!, with: captionFont, width: width)
+            let height = topPadding + captionHeight + topPadding
             
             return height
         }
@@ -127,7 +126,7 @@ extension HeadlinesViewController : PinterestLayoutDelegate
     func height(for text: String, with font: UIFont, width: CGFloat) -> CGFloat
     {
         let nsstring = NSString(string: text)
-        let maxHeight = CGFloat(200.0)
+        let maxHeight = CGFloat(1000.0)
         let textAttributes = [NSAttributedString.Key.font : font]
         let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
         return ceil(boundingRect.height)

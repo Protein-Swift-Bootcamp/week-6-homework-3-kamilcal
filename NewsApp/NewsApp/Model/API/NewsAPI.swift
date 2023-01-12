@@ -9,7 +9,7 @@ import UIKit
 
 class NewsAPI {
     
-    static let apiKey = "d4c64f40f2054a1ab74013208c050057"
+    static let apiKey = "ff93b27b0da64b0a80c7247c6940c32e"
     
     struct NewsInfo{
         static var countryName = ""
