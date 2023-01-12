@@ -11,4 +11,14 @@ class HeadlinesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
+    
+    
+    
+//    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+//        super.apply(layoutAttributes)
+//        if let attributes = layoutAttributes as? PinterestLayoutAttributes {
+//            // - change the image height
+//            imageHeight.constant = attributes.photoHeight
+//        }
+//    }
 }

@@ -26,6 +26,7 @@
 		D276590E296F2F3C00CF8874 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276590D296F2F3C00CF8874 /* SceneDelegate.swift */; };
 		D2765910296F6B8400CF8874 /* ViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276590F296F6B8400CF8874 /* ViewController + Extension.swift */; };
 		D2765914296F8C0200CF8874 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2765913296F8C0200CF8874 /* UIImageView + Extension.swift */; };
+		D276591629701D6400CF8874 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D276591529701D6400CF8874 /* PinterestLayout.swift */; };
 		D2EFF6BE296DAAAD009774B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EFF6BD296DAAAD009774B2 /* AppDelegate.swift */; };
 		D2EFF6C5296DAAAD009774B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EFF6C3296DAAAD009774B2 /* Main.storyboard */; };
 		D2EFF6C8296DAAAD009774B2 /* NewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2EFF6C6296DAAAD009774B2 /* NewsApp.xcdatamodeld */; };
@@ -53,6 +54,7 @@
 		D276590D296F2F3C00CF8874 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D276590F296F6B8400CF8874 /* ViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Extension.swift"; sourceTree = "<group>"; };
 		D2765913296F8C0200CF8874 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
+		D276591529701D6400CF8874 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		D2EFF6BA296DAAAD009774B2 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EFF6BD296DAAAD009774B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2EFF6C4296DAAAD009774B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				D276590F296F6B8400CF8874 /* ViewController + Extension.swift */,
 				D2765913296F8C0200CF8874 /* UIImageView + Extension.swift */,
+				D276591529701D6400CF8874 /* PinterestLayout.swift */,
 				D2EFF6DA296DBD02009774B2 /* App */,
 				D2EFF6DB296DBD0A009774B2 /* Supporting Files */,
 				D2EFF6D4296DBCB0009774B2 /* Model */,
@@ -290,6 +293,7 @@
 				D276590C296EF63500CF8874 /* TabBarViewController.swift in Sources */,
 				D276590A296EF09B00CF8874 /* DataController.swift in Sources */,
 				D27658EC296DC85800CF8874 /* CategoriesViewController.swift in Sources */,
+				D276591629701D6400CF8874 /* PinterestLayout.swift in Sources */,
 				D276590E296F2F3C00CF8874 /* SceneDelegate.swift in Sources */,
 				D27658FF296E142500CF8874 /* NewsAPI.swift in Sources */,
 				D2765903296E243B00CF8874 /* Article.swift in Sources */,

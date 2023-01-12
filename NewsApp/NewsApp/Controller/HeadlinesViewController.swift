@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreData
+import AVKit
+import AVFoundation
 
 class HeadlinesViewController: UIViewController {
     
@@ -14,7 +16,7 @@ class HeadlinesViewController: UIViewController {
     
     var dataController = DataController.shared
     
-    var articles = [Article]()
+    var articles = [Article?]()
     var countriesNames = [String]()
     var loadedCountries = [Country]()
     
@@ -24,6 +26,11 @@ class HeadlinesViewController: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
+            layout.delegate = self
+        }
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,15 +82,69 @@ extension HeadlinesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HeadlinesCollectionViewCell
-        if let articleImageString = articles[indexPath.row].urlToImage {
+        if let articleImageString = articles[indexPath.row]?.urlToImage {
             
             let imageURL = URL(string: articleImageString)
             cell.imageView.downloaded(from: imageURL!)
 //            TODO: imageview force unu kaldır!
         }
-            cell.infoLabel.text = articles[indexPath.row].title
+        cell.infoLabel.text = articles[indexPath.item]?.title
             return cell
         }
     }
+
+
+extension HeadlinesViewController : PinterestLayoutDelegate
+{
+    func collectionView(collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
+    {
+//        if let post = articles[indexPath.item], let photo = post.urlToImage {
+            let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+            let rect = AVMakeRect(aspectRatio: .init(width: 177, height: 177), insideRect: boundingRect)
+            
+            return rect.size.height
+//        }
+
+//        return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
+    {
+        if let post = articles[indexPath.item] {
+            let topPadding = CGFloat(8)
+            let bottomPadding = CGFloat(12)
+            let captionFont = UIFont.systemFont(ofSize: 15)
+            let captionHeight = self.height(for: post.title, with: captionFont, width: width)
+            let profileImageHeight = CGFloat(36)
+            let height = topPadding + captionHeight + topPadding + profileImageHeight + bottomPadding
+            
+            return height
+        }
+        
+        return 0.0
+    }
+    
+    func height(for text: String, with font: UIFont, width: CGFloat) -> CGFloat
+    {
+        let nsstring = NSString(string: text)
+        let maxHeight = CGFloat(200.0)
+        let textAttributes = [NSAttributedString.Key.font : font]
+        let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
+        return ceil(boundingRect.height)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
