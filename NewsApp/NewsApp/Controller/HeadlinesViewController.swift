@@ -47,6 +47,7 @@ class HeadlinesViewController: UIViewController {
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
+        
     }
     
     @objc func refreshNews() {
@@ -137,25 +138,43 @@ extension HeadlinesViewController: UICollectionViewDataSource {
     }
 }
 
-
-extension HeadlinesViewController : PinterestLayoutDelegate
-{
+extension HeadlinesViewController : PinterestLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var articleUrl = URL(string: (articles[indexPath.row]?.urlToImage)!)
+        if let articleUrl = articleUrl {
+           openUrl(articleUrl)
+        } else {
+            articleUrl = URL(string: articles[indexPath.row]!.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+           guard let articleUrl = articleUrl else { return }
+           openUrl(articleUrl)
+        }
+    }
+    
+    func openUrl(_ url: URL) {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            showError(controller: self, title: "Error", message: "Can't Open url")
+        }
+    }
+    
     func collectionView(collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
     {
-        let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-        let rect = AVMakeRect(aspectRatio: .init(width: 177, height: 177), insideRect: boundingRect)
+        return 177
         
-        return rect.size.height
+//        let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+//        let rect = AVMakeRect(aspectRatio: .init(width: 177, height: 177), insideRect: boundingRect)
+//
+//        return rect.size.height
 
     }
     
     func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
     {
         if let post = articles[indexPath.item] {
-            let topPadding = CGFloat(8)
             let captionFont = UIFont.systemFont(ofSize: 15)
             let captionHeight = self.height(for: post.title, with: captionFont, width: width)
-            let height = topPadding + captionHeight + topPadding
+            let height =   (captionHeight - 30 ) * 2
             
             return height
         }
@@ -166,7 +185,7 @@ extension HeadlinesViewController : PinterestLayoutDelegate
     func height(for text: String, with font: UIFont, width: CGFloat) -> CGFloat
     {
         let nsstring = NSString(string: text)
-        let maxHeight = CGFloat(1000.0)
+        let maxHeight = CGFloat(70)
         let textAttributes = [NSAttributedString.Key.font : font]
         let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
         return ceil(boundingRect.height)
